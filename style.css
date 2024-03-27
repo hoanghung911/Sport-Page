@@ -1,0 +1,1121 @@
+.header {
+    display :flex;
+    width :100%;
+    height :50px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.logo {
+    width :100px;
+    height: 50px;
+}
+.header__logo { 
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+.logo__text {
+    font-size: 30px;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 800px;
+    margin-top: 10px;
+    text-decoration: none;
+    color:#252525;
+}
+.header__nav { 
+    display :flex;
+    align-items: center;
+    justify-content: center;
+}
+.icon {
+    width :50px;
+    margin-right: 10px;
+}
+.icon:hover{
+  cursor:pointer;
+}
+.text__logo { 
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 800px;
+    font-size: 20px;
+}
+.text__logo:hover {
+    text-decoration: underline;
+    color:#e64d00;
+}
+.find__box { 
+    align-items: center;
+    justify-content:space-evenly;
+    display:flex
+}
+#findbox {
+    width : 250px;
+    height: 40px;
+    font-size: 30px;
+    margin-right: 10px;
+}
+.body__button {
+    --radius: 8px;
+    --border: 4px;
+    --height: 48px;
+    --speed: 0.25s;
+    display: grid;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 5%;
+    place-items: start;
+    align-content: center;
+    font-family: "SF Pro Text", "SF Pro Icons", "AOS Icons", "Helvetica Neue",
+      Helvetica, Arial, sans-serif, system-ui;
+  }
+  
+  .tabs {
+    height: var(--height);
+    display: grid;
+    grid-auto-flow: column;
+    background: hsl(0 0% 0%);
+    border-radius: var(--radius);
+    grid-auto-columns: 1fr;
+    position: relative;
+    border: var(--border) solid hsl(0 0% 0%);
+  }
+  
+  .tabs {
+    --ease: linear(
+      0,
+      0.1641 3.52%,
+      0.311 7.18%,
+      0.4413 10.99%,
+      0.5553 14.96%,
+      0.6539 19.12%,
+      0.738 23.5%,
+      0.8086 28.15%,
+      0.8662 33.12%,
+      0.9078 37.92%,
+      0.9405 43.12%,
+      0.965 48.84%,
+      0.9821 55.28%,
+      0.992 61.97%,
+      0.9976 70.09%,
+      1
+    );
+  }
+  
+  .tabs > .input,
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+  
+  .tabs:has(:checked:nth-of-type(1)) {
+    --active: 0;
+  }
+  .tabs:has(:checked:nth-of-type(2)) {
+    --active: 1;
+  }
+  .tabs:has(:checked:nth-of-type(3)) {
+    --active: 2;
+  }
+  .tabs:has(:checked:nth-of-type(4)) {
+    --active: 3;
+  }
+  
+  .tabs :checked + .label {
+    --highlight: 1;
+  }
+  
+  .tabs:has(.input:nth-of-type(2)) {
+    --count: 2;
+  }
+  .tabs:has(.input:nth-of-type(3)) {
+    --count: 3;
+  }
+  .tabs:has(.input:nth-of-type(4)) {
+    --count: 4;
+  }
+  
+  .tabs .label {
+    padding: 0 clamp(10px, 10px + 10px, 20px);
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    display: grid;
+    border-radius: calc(var(--radius) - var(--border));
+    place-items: center;
+    color: hsl(0 0% 100% / calc(0.5 + var(--highlight, 0)));
+    transition: background, color;
+    transition-duration: 0.25s;
+    transition-timing-function: var(--ease, ease);
+  }
+  
+  .input:not(:checked) + .label:hover {
+    --highlight: 0.35;
+    background: hsl(0 0% 20%);
+  }
+  
+  .tabs::after {
+    pointer-events: none;
+    content: "";
+    width: calc(100% / var(--count));
+    height: 100%;
+    background: hsl(0 0% 100%);
+    position: absolute;
+    border-radius: calc(var(--radius) - var(--border));
+    mix-blend-mode: difference;
+    translate: calc(var(--active, 0) * 100%) 0;
+    transition: translate, outline-color;
+    transition-duration: var(--speed);
+    transition-timing-function: var(--ease, ease);
+    outline: 2px solid transparent;
+  }
+  
+  .tabs:has(:focus-visible)::after {
+    outline-color: red;
+  }
+  .card {
+    width: 250px;
+    height: 354px;
+    padding: .8em;
+    background: #f5f5f5;
+    position: relative;
+    overflow: visible;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+   }
+   
+   .card-img {
+    background-image: url("https://i.pinimg.com/564x/da/b2/6d/dab26d6608b035a323c062b70d894b58.jpg");
+    height: 60%;
+    background-size: cover ;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   
+   .card-info {
+    padding-top: 10%;
+   }
+   
+   svg {
+    width: 20px;
+    height: 20px;
+   }
+   
+   .card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+   }
+   
+   /*Text*/
+   .text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-decoration: none;
+    color:#252525;
+   }
+   .text-title:hover { 
+    cursor :pointer;
+    text-decoration: underline;
+   }
+   
+   .text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+   }
+   
+   /*Button*/
+   .card-button {
+    border: 1px solid #252525;
+    display: flex;
+    padding: .3em;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: .3s ease-in-out;
+   }
+   
+   /*Hover*/
+   .card-img:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   
+   .card-button:hover {
+    border: 1px solid #ffcaa6;
+    background-color: #ffcaa6;
+   }
+
+   .card-img2 {
+    background-image: url("https://i.pinimg.com/736x/30/72/6e/30726e2c0d6aa7267cd6da0f6cba4acd.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+
+   .card-img3 {
+    background-image: url("https://i.pinimg.com/736x/9e/3f/6d/9e3f6d399c599159c853b0ff392b9490.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+
+   .card-img4 {
+    background-image: url("https://i.pinimg.com/564x/ae/69/e8/ae69e82e3c521fe70a2b6859a0d8d6b9.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+  
+
+   
+   .card-img2:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img3:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img4:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+
+   .card-img5 {
+    background-image: url("https://i.pinimg.com/564x/8a/00/24/8a00240702b9502041ae62a28576e461.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img5:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+
+   .card-img6 {
+    background-image: url("https://i.pinimg.com/564x/71/60/3b/71603b127225a7dd61b25b5af01d8be4.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img6:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img7 {
+    background-image: url("https://i.pinimg.com/564x/59/a3/9e/59a39e0e31355dcc3d3c476289af4b44.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img7:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img8 {
+    background-image: url("https://i.pinimg.com/564x/d5/2e/1f/d52e1f6b99427add29e2233eeba97946.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img8:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img9 {
+    background-image: url("https://i.pinimg.com/564x/be/e1/27/bee127d07036f91a96894b96020c1653.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img9:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   } .card-img10 {
+    background-image: url("https://i.pinimg.com/736x/16/1c/e1/161ce13cab2cf2e264ecf648a54c0802.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img10:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img11 {
+    background-image: url("https://i.pinimg.com/564x/6a/f7/6e/6af76eb0944ec8f212dcb98da61064bf.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img11:hover {
+    transform: translateY(-25%);
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+  
+  .card-img12 {
+   background-image: url("https://i.pinimg.com/236x/85/a6/26/85a626deb7d6196924562477c453bb8d.jpg");
+   background-size: cover;
+   height: 60%;
+   width: 100%;
+   border-radius: .5rem;
+   transition: .3s ease;
+  }
+  .card-img12:hover {
+   transform: translateY(-25%);
+   box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+  }
+  .xem__tiep {
+    font-size: 25px;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500px;
+    text-decoration: underline;
+    color:#252525; 
+    margin-left: 85%;
+    padding-bottom: 50px;
+  }
+   .layout__card {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+   }
+   .video__layout{
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+   
+  .button {
+    width : 250px; 
+    height :50px;
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 500px;
+  }
+  .button:hover {
+    color:#ddd;
+    background-color: #252525;
+  }
+  .button__shoes {
+    margin-top: 50px;
+    margin-left: 5%;
+    margin-bottom: 50px;
+  }
+  .card-img13 {
+    background-image: url("https://assets.adidas.com/images/w_766,h_766,f_auto,q_auto,fl_lossy,c_fill,g_auto/6a2433f217f848cbae3ce23998e367a9_9366/gi%C3%A0y-%C4%91%C3%A1-b%C3%B3ng-turf-x-crazyfast.3.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img13:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c1208bc7eadf40a5aa4cf21e7b3a03bb_9366/Giay_DJa_Bong_Turf_X_Crazyfast.3_trang_ID9337_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .layout__shoes  {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    padding-top: 50px;
+    padding-bottom: 30px;
+   }
+   .card-img14 {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/c267fe96bc5c43e9b69bfe0c6b5635b0_9366/PREDATOR_ACCURACY.3_L_FG_Mau_xanh_da_troi_GZ0015_01_standard_hover.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img14:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/450d3822335841d28517e13e19bae0b0_9366/PREDATOR_ACCURACY.3_L_FG_Mau_xanh_da_troi_GZ0015_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img15 {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a79e56a84dd1433e956626c1c69d97d7_9366/Giay_DJa_Bong_Turf_X_Crazyfast.3_Mau_xanh_da_troi_ID9338_01_standard_hover.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img15:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/e631bbc9eb8849b294d69a8aeacf7339_9366/Giay_DJa_Bong_Turf_X_Crazyfast.3_Mau_xanh_da_troi_ID9338_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img16 {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/0fb363db13f144e4ab4f5210c01103da_9366/PREDATOR_LEAGUE_FG_DJen_IG7763_01_standard_hover.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img16:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/4c25acbde54a47dfb1da847f8f64d78f_9366/PREDATOR_LEAGUE_FG_DJen_IG7763_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img17 {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/7b3184ef380f44d49da0af7200f64c97_9366/Giay_DJa_Bong_Firm_Ground_X_Speedportal.3_Hong_GZ5076_01_standard_hover.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img17:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/a23b153d07ee4492988baf7201050140_9366/Giay_DJa_Bong_Firm_Ground_X_Speedportal.3_Hong_GZ5076_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img18 {
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/6b8350b7d80141bbb41f96e441f171fd_9366/Giay_DJa_Bong_Turf_X_Crazyfast_League_Mau_vang_IF0698_01_standard_hover.jpg");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+   }
+   .card-img18:hover {
+    transform: translateY(-25%);
+    background-image: url("https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/49ebd0a9167343eeb54451055f234c97_9366/Giay_DJa_Bong_Turf_X_Crazyfast_League_Mau_vang_IF0698_09_standard.jpg");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img19 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107599/01/sv01/fnd/PNA/fmt/png/FUTURE-7-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img19:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107599/01/fnd/PNA/fmt/png/FUTURE-7-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img20 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107744/01/sv01/fnd/PNA/fmt/png/ULTRA-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img20:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107744/01/fnd/PNA/fmt/png/ULTRA-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+   .card-img21 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107355/03/sv01/fnd/PNA/fmt/png/FUTURE-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img21:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107355/03/fnd/PNA/fmt/png/FUTURE-ULTIMATE-FG/AG-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+
+   .card-img22 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107610/01/sv01/fnd/PNA/fmt/png/FUTURE-ULTIMATE-Neymar-Jr-FG/AG-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img22:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107610/01/fnd/PNA/fmt/png/FUTURE-ULTIMATE-Neymar-Jr-FG/AG-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+
+   .card-img23 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107521/03/sv01/fnd/PNA/fmt/png/ULTRA-MATCH-TT-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img23:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107521/03/fnd/PNA/fmt/png/ULTRA-MATCH-TT-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+
+   .card-img24 {
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107422/04/sv01/fnd/PNA/fmt/png/ULTRA-PRO-FG/AG-Men's-Soccer-Cleats");
+    background-size: cover;
+    height: 60%;
+    width: 100%;
+    border-radius: .10rem;
+    transition: .3s ease;
+   }
+   .card-img24:hover {
+    transform: translateY(-25%);
+    background-size: cover;
+    background-image: url("https://images.puma.com/image/upload/f_auto,q_auto,b_rgb:fafafa,w_750,h_750/global/107422/04/fnd/PNA/fmt/png/ULTRA-PRO-FG/AG-Men's-Soccer-Cleats");
+    box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+   }
+  .video__layout__kit {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    align-content: center;
+    justify-content: center;
+}
+#title__layout__adv{
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 8%;
+  font-family: "Merriweather Sans", sans-serif;
+}  
+
+  .layout__adv {
+    height :auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+    margin-left: 5%;
+    padding-bottom: 20px;
+}
+.text__adv {
+  font-size: 30px;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 500px;
+  margin-bottom: 10px;
+}
+.text__note {
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+.buy__now {
+  font-size: 18px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-bottom: 50px;
+}
+.layout__text__left {
+  width : 50%;
+  height :auto;
+  justify-content: center;
+  align-content: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
+.layout__text {
+  display:flex;
+  justify-content:center;
+  align-content: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 30px;
+  background-color: #252525;
+}
+.titte__layout {
+  font-size: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color:#ddd;
+}
+.paragraph__layout{
+   font-size: 15px;
+   font-family: "Merriweather Sans", sans-serif;
+   color:#ddd
+}
+.layout__sale__off{
+  display:flex;
+  border:2px solid #ffff4d;
+  width: 100%;
+  height: auto; 
+  justify-content:center;
+  align-content: center;
+  background-color: #ffff4d;
+  padding-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.text__sale {
+  font-size: 35px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.button__sale {
+  width :auto;
+  height:45px;
+  margin-top: 37px;
+  margin-left: 10px;
+  color:#ddd;
+  background-color: #252525;
+  cursor: pointer;
+  
+}
+  
+.layout__footer {
+    display :flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: stretch;
+    text-decoration: none;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 50;
+    
+}
+.layout__colum {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: space-around;
+    align-items: flex-start;
+}
+.title__footer {
+    font-family: "Merriweather Sans", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.text__colum { 
+    text-decoration: none;
+    color:#252525;
+    font-family: "Merriweather Sans", sans-serif;
+    margin-top: 10px;
+}
+.text__colum:hover {
+     text-decoration: underline;
+     color:darkgray
+}
+.icon__colum{
+    margin-top: 10px;
+}
+.footer__nav{
+  width :auto;
+  display:flex;
+  height : 50px;
+  justify-content: center;
+  align-items: center;
+  color:#ddd;
+  background-color: #252525;
+  margin-top: 20px;
+}
+.nav__text{
+  border-right: 2px solid #ddd;
+  padding-right: 20px;
+  margin-left: 20px;
+  color:#ddd
+}
+.nav__text1 {
+  margin-left: 20px ;
+  color:#ddd
+}
+.layout__kit {
+  width:85%;
+  height:auto;
+}
+.photo__kit {
+  height:450px;
+  width : 400px;
+}
+.photo__kit:hover{
+  border: #006fff 0.2em solid;
+}
+.layout__kit__container {
+  display:flex;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 40px;
+}
+.layout__sellbox {
+  width :25%;
+  height: auto;
+  justify-content: center;
+  align-content: center;
+  border: 2px solid #252525;
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.kit__note{ 
+  color:#252525;
+  font-family: "Merriweather Sans", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding-top: 10px;
+  margin-bottom: 10px;
+}
+.kit__title {
+  color:#252525;
+  font-size: 30px;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.kit__grap {
+  margin-top: 20px;
+}
+.size__text{
+  margin-top: 20px;
+  color:#252525;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.sell__note{
+  padding-top: 10px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+.button__size {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: row;
+}
+.button__sizeBox {
+  width : 90px;
+  height:30px;
+
+}
+.button__sizeBox:hover{
+  color:#ddd;
+  background-color: #252525;
+}
+.sell__button {
+  width: 250px;
+  height:50px;
+  background-color: #252525;
+  cursor: pointer;
+  color:#ddd
+}
+.sell__button:hover { 
+  background-color: #ddd;
+  color:#252525;
+}
+.sell {
+  margin-top :20px;
+}
+.like__button {
+  height :50px;
+  width: 50px; 
+  background-color: #252525;
+}
+.like__button:hover {
+  background-color: #ddd;
+  color:#252525;
+  cursor: pointer;
+
+}
+.logistic {
+  display :flex;
+  margin-top: 10px;
+}
+.logistic__note {
+  margin-left :10px;
+  color :#252525;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.care__box{
+  display:flex;
+  align-content: center;
+  text-align: center;
+  margin-top: 20px;
+}
+.icon__box{
+  width:20px;
+}
+
+.size__title {
+  font-size: 30px;
+  margin-top: 10px;
+  font-weight: 600;
+  font-family: "Merriweather Sans", sans-serif;
+}
+.layout__careVN{
+   width :50%;
+   height :auto; 
+   align-content: center ;
+  justify-content: center;
+  padding-left: 140px;
+}
+
+.layout__care {
+  display :flex;
+  border-top: 2px solid #252525;
+  width: 75%;
+  margin-left: 1%;
+  align-content: space-around;
+  justify-content: center;
+}
+.layout__careENG{
+  padding-top: 40px;
+  width: 50%;
+  height :auto;
+  align-content: center ;
+  justify-content: center;
+}
+.list__note{ 
+  color :#252525;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+.layout__info {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    height: 300px;
+    justify-content: center;
+    width : 75%;
+    margin-left: 1%;
+    border-top: 2px solid #252525;
+}
+#title__ratting {
+  font-size : 30px;
+  margin-top: 50px;
+  margin-bottom: 20px ;
+  margin-left: 10%;
+  font-family: "Merriweather Sans", sans-serif;
+  color:252525;
+}
+
+.comment__bar { 
+  display :flex;
+  width : 100%;
+  height :auto;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.title__comment {
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:252525;
+}
+
+.title__day{
+  font-weight: 600;
+  font-size: 20px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:darkgray;
+}
+.comment__note {
+  display:flex;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.note__comment{ 
+  font-size: 20px;
+  margin-left: 33%;
+  width : 100%;
+
+}
+.comment__layout { 
+  border-top: 2px solid #252525;
+  width :70%;
+  margin-left: 5%;
+  height : auto; 
+  margin-bottom: 50px;
+}
+.like__layout {
+  display:flex;
+  margin-left: 60%;
+  justify-content: space-evenly;
+}
+.input__box {
+  width : 550px;
+  height : 40px;
+  
+}
+.text__box {
+  text-transform: uppercase;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+#my__account {
+  font-size: 50px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#creat__account {
+   font-size: 40px;
+   font-family: "Merriweather Sans", sans-serif;
+   color:#252525;
+}
+.layout__login1 {
+    display:flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+    
+}
+.text__saleOff{
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  border: 1px solid #252525;
+  height : 40px;
+  justify-items: center;
+  text-align: center;
+  padding-top:20px;
+  color:#ddd;
+  text-decoration: underline;
+  background-color: #252525;
+  width:100%
+}
+text__saleOff:hover {
+  color:#ddd;
+  font-weight: 1000;
+  cursor: pointer;
+}
+.checkbox{
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+#button__register{
+  width : 550px;
+  height : 40px;
+  color:#ddd;
+  background-color: #252525;
+  justify-content: center;
+}
+#button__layout{
+  display:flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+.text__saleOFF{
+  width:100%;
+  background-color: #252525;
+  height:40px;
+  padding-top: 20px;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
+}
+.text__saleOfff {
+  color:#ddd;
+  justify-content: center;
+}
+.nameset {
+  font-size: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5%;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  font-style: italic;
+}
+.nameSet__layout{
+  display:flex;
+  margin-left: 5%;
+  margin-top: 20px;
+}
+.nameSet__text {
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 10px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-bottom: 80px;
+}
+.nameSet__text:hover{
+  text-decoration: underline;
+  color:#e64d00
+}
+
+.card__img{
+  width: 450px;
+  height: 500px;
+}
+.card__title{
+  font-size: 18px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:#252525;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.card__note {
+  font-size: 18px;
+  font-family: "Merriweather Sans", sans-serif;
+  color:dimgray;
+}
+.card__nation__layout{
+  display: flex;
+}
